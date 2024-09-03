@@ -1,0 +1,30 @@
+﻿<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Label Content="Введите фамилию продавца:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="SellerNameTextBox" HorizontalAlignment="Left" Margin="200,10,0,0" VerticalAlignment="Top" Width="200"/>
+
+        <Label Content="Введите дату приема на работу (дд.мм.гггг):" HorizontalAlignment="Left" Margin="10,40,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="HireDateTextBox" HorizontalAlignment="Left" Margin="200,40,0,0" VerticalAlignment="Top" Width="200"/>
+
+        <Label Content="Введите дневную выручку:" HorizontalAlignment="Left" Margin="10,70,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="DailyRevenueTextBox" HorizontalAlignment="Left" Margin="200,70,0,0" VerticalAlignment="Top" Width="200"/>
+
+        <Button Content="Рассчитать комиссионные" HorizontalAlignment="Left" Margin="10,100,0,0" VerticalAlignment="Top" Width="150" Click="CalculateCommission_Click"/>
+
+        <DataGrid x:Name="ResultDataGrid" AutoGenerateColumns="False" HorizontalAlignment="Left" Margin="10,140,0,0" VerticalAlignment="Top" Height="150" Width="748">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ФИО продавца" Binding="{Binding SellerName}" Width="200"/>
+                <DataGridTextColumn Header="Размер комиссионного вознаграждения, руб." Binding="{Binding CommissionAmount}" Width="200"/>
+                <DataGridTextColumn Header="Размер дневной выручки, руб." Binding="{Binding DailyRevenue}" Width="150"/>
+                <DataGridTextColumn Header="Стаж работы в организации, лет." Binding="{Binding Tenure}" Width="150"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>
