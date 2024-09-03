@@ -86,4 +86,3 @@ namespace WpfApp1
         public string Tenure { get; set; }
     }
 }
-    
