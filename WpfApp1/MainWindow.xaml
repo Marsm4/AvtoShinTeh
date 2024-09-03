@@ -16,9 +16,13 @@
         <Label Content="Введите дневную выручку:" HorizontalAlignment="Left" Margin="10,70,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="DailyRevenueTextBox" HorizontalAlignment="Left" Margin="200,70,0,0" VerticalAlignment="Top" Width="200"/>
 
-        <Button Content="Рассчитать комиссионные" HorizontalAlignment="Left" Margin="10,100,0,0" VerticalAlignment="Top" Width="150" Click="CalculateCommission_Click"/>
+        <!-- Новый раздел для отображения фамилии и комиссионных продавца -->
+        <Label Content="Комиссионные продавца:" HorizontalAlignment="Left" Margin="10,100,0,0" VerticalAlignment="Top"/>
+        <TextBlock x:Name="CommissionSellerName" HorizontalAlignment="Left" Margin="200,100,0,0" VerticalAlignment="Top" Width="200" FontWeight="Bold"/>
 
-        <DataGrid x:Name="ResultDataGrid" AutoGenerateColumns="False" HorizontalAlignment="Left" Margin="10,140,0,0" VerticalAlignment="Top" Height="150" Width="712">
+        <Button Content="Рассчитать комиссионные" HorizontalAlignment="Left" Margin="10,130,0,0" VerticalAlignment="Top" Width="150" Click="CalculateCommission_Click"/>
+
+        <DataGrid x:Name="ResultDataGrid" AutoGenerateColumns="False" HorizontalAlignment="Left" Margin="10,170,0,0" VerticalAlignment="Top" Height="150" Width="712">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ФИО продавца" Binding="{Binding SellerName}" Width="200"/>
                 <DataGridTextColumn Header="Размер комиссионного вознаграждения, руб." Binding="{Binding CommissionAmount}" Width="200"/>

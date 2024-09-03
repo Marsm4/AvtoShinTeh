@@ -55,14 +55,17 @@ namespace WpfApp1
                     commissionAmount *= 1.05m;
                 }
 
-                ResultDataGrid.Items.Clear();
-                ResultDataGrid.Items.Add(new CommissionResult
-                {
-                    SellerName = seller.Name,
-                    CommissionAmount = commissionAmount.ToString("F2"),
-                    DailyRevenue = dailyRevenue.ToString("F2"),
-                    Tenure = tenure.ToString()
-                });
+                //// Отображаем фамилию продавца и комиссионные
+                //CommissionSellerName.Text = $"{seller.Name}: {commissionAmount:F2} руб.";
+
+                //// Добавляем данные в таблицу без очистки
+                //ResultDataGrid.Items.Add(new CommissionResult
+                //{
+                //    SellerName = seller.Name,
+                //    CommissionAmount = commissionAmount.ToString("F2"),
+                //    DailyRevenue = dailyRevenue.ToString("F2"),
+                //    Tenure = tenure.ToString()
+                //});
             }
             catch (FormatException)
             {
@@ -71,7 +74,7 @@ namespace WpfApp1
         }
     }
 
-    public class Seller
+        public class Seller
     {
         public int Id { get; set; }
         public string Name { get; set; }
