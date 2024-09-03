@@ -55,17 +55,17 @@ namespace WpfApp1
                     commissionAmount *= 1.05m;
                 }
 
-                //// Отображаем фамилию продавца и комиссионные
-                //CommissionSellerName.Text = $"{seller.Name}: {commissionAmount:F2} руб.";
+                // Отображаем фамилию продавца и комиссионные
+                CommissionSellerName.Text = $"{seller.Name}: {commissionAmount:F2} руб.";
 
-                //// Добавляем данные в таблицу без очистки
-                //ResultDataGrid.Items.Add(new CommissionResult
-                //{
-                //    SellerName = seller.Name,
-                //    CommissionAmount = commissionAmount.ToString("F2"),
-                //    DailyRevenue = dailyRevenue.ToString("F2"),
-                //    Tenure = tenure.ToString()
-                //});
+            
+                ResultDataGrid.Items.Add(new CommissionResult
+                {
+                    SellerName = seller.Name,
+                    CommissionAmount = commissionAmount.ToString("F2"),
+                    DailyRevenue = dailyRevenue.ToString("F2"),
+                    Tenure = tenure.ToString()
+                });
             }
             catch (FormatException)
             {

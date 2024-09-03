@@ -3,26 +3,28 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Label Content="Введите фамилию продавца:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="SellerNameTextBox" HorizontalAlignment="Left" Margin="200,10,0,0" VerticalAlignment="Top" Width="200"/>
+        <Label Content="Введите фамилию продавца:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Foreground="#E5000000" FontWeight="Bold"/>
+        <TextBox x:Name="SellerNameTextBox" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Width="200" BorderBrush="#7F000000"/>
 
-        <Label Content="Введите дату приема на работу (дд.мм.гггг):" HorizontalAlignment="Left" Margin="10,40,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="HireDateTextBox" HorizontalAlignment="Left" Margin="266,44,0,0" VerticalAlignment="Top" Width="200"/>
+        <Label Content="Введите дату приема на работу (дд.мм.гггг):" HorizontalAlignment="Left" Margin="10,40,0,0" VerticalAlignment="Top" Foreground="#E5000000" FontWeight="Bold"/>
+        <TextBox x:Name="HireDateTextBox" HorizontalAlignment="Center" Margin="0,39,0,0" VerticalAlignment="Top" Width="200" BorderBrush="#7F000000"/>
 
-        <Label Content="Введите дневную выручку:" HorizontalAlignment="Left" Margin="10,70,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="DailyRevenueTextBox" HorizontalAlignment="Left" Margin="200,70,0,0" VerticalAlignment="Top" Width="200"/>
+        <Label Content="Введите дневную выручку:" HorizontalAlignment="Left" Margin="10,70,0,0" VerticalAlignment="Top" Foreground="#E5000000" FontWeight="Bold"/>
+        <TextBox x:Name="DailyRevenueTextBox" HorizontalAlignment="Center" Margin="0,75,0,0" VerticalAlignment="Top" Width="200" BorderBrush="#7F000000"/>
 
         <!-- Новый раздел для отображения фамилии и комиссионных продавца -->
-        <Label Content="Комиссионные продавца:" HorizontalAlignment="Left" Margin="10,100,0,0" VerticalAlignment="Top"/>
-        <TextBlock x:Name="CommissionSellerName" HorizontalAlignment="Left" Margin="200,100,0,0" VerticalAlignment="Top" Width="200" FontWeight="Bold"/>
+        <Label Content="Комиссионные продавца:" HorizontalAlignment="Left" Margin="10,100,0,0" VerticalAlignment="Top" Foreground="#E5000000" FontWeight="Bold"/>
+        <TextBlock x:Name="CommissionSellerName" HorizontalAlignment="Center" Margin="0,104,0,0" VerticalAlignment="Top" Width="200" FontWeight="Bold"/>
 
-        <Button Content="Рассчитать комиссионные" HorizontalAlignment="Left" Margin="10,130,0,0" VerticalAlignment="Top" Width="150" Click="CalculateCommission_Click"/>
+        <Button Content="Рассчитать комиссионные" HorizontalAlignment="Left" Margin="10,130,0,0" VerticalAlignment="Top" Width="217" Click="CalculateCommission_Click"/>
 
-        <DataGrid x:Name="ResultDataGrid" AutoGenerateColumns="False" HorizontalAlignment="Left" Margin="10,170,0,0" VerticalAlignment="Top" Height="150" Width="712">
+        <DataGrid x:Name="ResultDataGrid" AutoGenerateColumns="False" HorizontalAlignment="Left" Margin="10,170,0,0" VerticalAlignment="Top" Height="198" Width="712">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ФИО продавца" Binding="{Binding SellerName}" Width="200"/>
                 <DataGridTextColumn Header="Размер комиссионного вознаграждения, руб." Binding="{Binding CommissionAmount}" Width="200"/>
